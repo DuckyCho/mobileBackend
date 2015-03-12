@@ -1,0 +1,24 @@
+import java.io.IOException;
+import java.net.ServerSocket;
+
+
+public class Reactor {
+
+	private ServerSocket serverSocket;
+	
+	public Reactor(int port){
+		try{
+			serverSocket = new ServerSocket(port);
+		} catch(IOException e){
+			e.printStackTrace();			
+		}
+	}
+	
+	public void startServer(){
+		Dispatcher dispatcher = new Dispatcher();
+		while(true){
+			dispatcher.dispatch(serverSocket);			
+		}
+		
+	}
+}

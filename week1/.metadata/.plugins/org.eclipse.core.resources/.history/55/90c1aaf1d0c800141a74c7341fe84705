@@ -1,0 +1,29 @@
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+public class Dispatcher {
+
+	private final int HEADER_SIZE = 6;
+	
+	public void dispatch(ServerSocket serverSocket){
+		try{
+			Socket socket = serverSocket.accept();
+		} catch(IOException e){
+			e.printStackTrace();			
+		}
+		
+	}
+	
+	public void demultiplex(Socket socket){
+		try{
+			
+			
+		} catch(IOException e){
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

@@ -1,0 +1,13 @@
+import java.io.InputStream;
+
+
+public class StreamSayHelloProtocol {
+
+	private static final int DATA_SIZE = 512;
+	private static final int TOEKN_NUM = 2;
+	
+	public void handleEvent(InputStream inputStream){
+		
+		
+	}
+}

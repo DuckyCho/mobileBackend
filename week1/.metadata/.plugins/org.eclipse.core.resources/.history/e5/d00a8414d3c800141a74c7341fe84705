@@ -1,0 +1,6 @@
+
+public interface EventHandler {
+
+	public String getHandler();
+	public void handleEvent(InputStream inputStream);
+}

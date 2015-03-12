@@ -1,0 +1,31 @@
+import java.io.File;
+
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.core.Persister;
+
+
+
+public class ServerInitializer {
+
+	public static void main(String[] args){
+		int port = 5000;
+		System.out.println("Server ON :" + port);
+		
+		Reactor reactor = new Reactor(port);
+
+		try{
+			Serializer serializer = new Persister();
+			File source = new File("HandlerList.xml");
+			ServerListData serverList = serializer.read(ServerListData.class, source);
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		reactor.registerHandler(new StreamSayHelloEventHandler());
+		reactor.registerHandler(new StreamUpdateProfileEventHandler());
+		
+		reactor.startServer();
+	}
+		
+	
+}

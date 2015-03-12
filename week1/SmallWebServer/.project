@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>SmallWebServer</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>libs/simple-xml-2.7.1.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/15%EB%85%8401%ED%95%99%EA%B8%B0/%EB%AA%A8%EB%B0%94%EC%9D%BC%EB%B0%B1%EC%97%94%EB%93%9C/%EC%88%98%EC%97%85/week1/SmallWebServer/src/simple-xml-2.7.1.jar</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

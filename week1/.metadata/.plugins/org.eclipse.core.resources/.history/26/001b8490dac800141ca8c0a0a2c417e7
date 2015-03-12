@@ -1,0 +1,21 @@
+import java.net.ServerSocket;
+
+
+public class ThreadPoolDispatcher implements Dispatcher {
+
+	static final String NUMTHREADS =  "8";
+	static final String THREADPROP = "Thtreads";
+	
+	private int numThreads;
+	
+	public ThreadPoolDispatcher() {
+		numThreads = Integer.parseInt(System.getProperty(THREADPROP, NUMTHREADS));
+	}
+	
+	@Override
+	public void dispatch(ServerSocket serverSocket, HandleMap handlers) {
+		
+		
+	}
+
+}

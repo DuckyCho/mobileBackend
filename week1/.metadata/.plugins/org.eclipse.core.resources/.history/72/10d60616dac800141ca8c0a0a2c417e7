@@ -1,0 +1,12 @@
+import java.net.ServerSocket;
+
+
+public class ThreadPoolDispatcher implements Dispatcher {
+
+	@Override
+	public void dispatch(ServerSocket serverSocket, HandleMap handlers) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
