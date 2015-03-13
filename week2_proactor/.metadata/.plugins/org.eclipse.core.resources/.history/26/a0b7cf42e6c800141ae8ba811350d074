@@ -1,0 +1,4 @@
+
+public class NioHandleMap extends HashMap<String, NioEventHandler> {
+
+}

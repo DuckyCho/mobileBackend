@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="java.nio.channels.AsynchronousChannelGroup"/>
+<fullyQualifiedTypeName name="java.nio.ByteBuffer"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ExecutionException"/>
+<fullyQualifiedTypeName name="java.nio.channels.CompletionHandler"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="NioSayHelloEventHandler"/>
+<fullyQualifiedTypeName name="NioEventHandler"/>
+<fullyQualifiedTypeName name="NioHandleMap"/>
+<fullyQualifiedTypeName name="Demultiplexer"/>
+</qualifiedTypeNameHistroy>

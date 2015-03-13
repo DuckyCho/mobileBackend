@@ -1,0 +1,21 @@
+import java.nio.channels.AsynchronousServerSocketChannel;
+import java.nio.channels.AsynchronousSocketChannel;
+import java.nio.channels.CompletionHandler;
+
+
+public class Dispatcher implements CompletionHandler<AsynchronousSocketChannel, AsynchronousServerSocketChannel> {
+
+	@Override
+	public void completed(AsynchronousSocketChannel channel,
+			AsynchronousServerSocketChannel listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void failed(Throwable exc, AsynchronousServerSocketChannel attachment) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

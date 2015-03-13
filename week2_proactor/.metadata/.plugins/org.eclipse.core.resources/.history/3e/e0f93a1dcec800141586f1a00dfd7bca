@@ -1,0 +1,26 @@
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousSocketChannel;
+import java.nio.channels.CompletionHandler;
+
+
+public class EchoHandler implements CompletionHandler<Integer, ByteBuffer> {
+
+	private AsynchronousSocketChannel channel;
+	
+	public EchoHandler(AsynchronousSocketChannel channel){
+		this.channel = channel;
+	}
+	
+	@Override
+	public void completed(Integer result, ByteBuffer buffer) {
+		
+		
+	}
+
+	@Override
+	public void failed(Throwable exc, ByteBuffer buffer) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

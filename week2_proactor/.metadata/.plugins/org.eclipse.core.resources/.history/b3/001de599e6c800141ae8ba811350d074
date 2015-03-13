@@ -1,0 +1,14 @@
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousSocketChannel;
+
+
+public interface NioEventHandler {
+
+	public String getHandle();
+	
+	public int getDataSize();
+	
+	public void initialize(AsynchronousSocketChannel channel, ByteBuffer buffer);
+	
+}
+

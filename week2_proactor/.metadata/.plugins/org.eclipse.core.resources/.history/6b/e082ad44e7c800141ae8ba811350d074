@@ -1,0 +1,42 @@
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousSocketChannel;
+
+
+public class NioSayHelloEventHandler implements NioEventHandler{
+private static final int TOKEN_NUM = 2;
+
+private AsynchronousSocketChannel channel;
+private ByteBuffer buffer;
+	
+	
+	@Override
+	public void completed(Integer result, ByteBuffer attachment) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void failed(Throwable exc, ByteBuffer attachment) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getHandle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getDataSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void initialize(AsynchronousSocketChannel channel, ByteBuffer buffer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

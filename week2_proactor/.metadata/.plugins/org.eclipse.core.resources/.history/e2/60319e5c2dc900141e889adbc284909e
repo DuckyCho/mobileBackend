@@ -1,0 +1,9 @@
+
+public class ServerInitializer {
+
+	public static void main(String[] args) {
+		ServerInitializer reactorServer = new reactor.ServerInitializer();
+		reactorServer.startServer();
+	}
+
+}

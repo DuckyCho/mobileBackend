@@ -1,0 +1,7 @@
+
+public interface NioEventHandler {
+
+	public String getHandle();
+	
+}
+
