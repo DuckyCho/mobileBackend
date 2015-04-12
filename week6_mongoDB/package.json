@@ -1,0 +1,9 @@
+{
+  "name": "memo",
+  "version": "1.0.0",
+  "description": "restful memo server",
+  "main": "server.js",
+  "dependencies": {
+    "mongodb": "~2.0"
+  }
+}

@@ -1,0 +1,85 @@
+html
+  head
+    title Memo
+    link(rel='stylesheet', href='css/bootstrap.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+    
+          
+  body
+   div.container
+      div.modal.fade#new_memo(tabindex="-1",role="dialog",aria-labelledby="newMemoLabel",aria-hidden="true")
+            div.modal-dialog
+              div.modal-content
+                div.modal-header
+                  button(type="button",class="close",data-dismiss="modal",aria-label="Close")
+                    span(aria-hidden="true") &times;
+                  h4.modal-title#newMemoLabel New Memo
+                div.modal-body(style="padding-bottom:4em;")
+                  form(class="form-horizontal",data-toggle="validator",role="form",enctype="multipart/form-data",action="",method="post",novalidate="true")
+                    |Author
+                    input(type="text",class="form-control",id="author",name="author",placeholder="Author")
+                    |<br>Memo
+                    textarea(class="form-control",rows="3",id="memoBody",name="memo",placeholder="memo")
+                    input(type="file",name="photo",id="photo",style="margin-top:1em;",multiple="true")
+                    button.btn.btn-primary.btn-sm.pull-right(type="submit",style="margin-right:1em; margin-top:1em;") save
+      div.modal.fade#edit_memo(tabindex="-1",role="dialog",aria-labelledby="editMemoLabel",aria-hidden="true")
+            div.modal-dialog
+              div.modal-content
+                div.modal-header
+                  button(type="button",class="close",data-dismiss="modal",aria-label="Close")
+                    span(aria-hidden="true") &times;
+                  h4.modal-title#newMemoLabel Edit Memo
+                div.modal-body(style="padding-bottom:4em;")
+                  form#edit_form(class="form-horizontal", enctype="multipart/form-data",data-toggle="validator",role="form",action="",method="post",multiple="true",novalidate="true")
+                    |Author
+                    input(type="text",class="form-control",id="edit_author_input" ,name="author",value="")
+                    |<br>Memo
+                    textarea(class="form-control",id="edit_memo_input",rows="3",name="memo",value="")
+                    input(type="file",name="photo",id="photo",style="margin-top:1em;",multiple="true")
+                    button.btn.btn-primary.btn-sm.pull-right(type="submit",style="margin-right:1em; margin-top:1em;") save
+      nav.navbar.navbar-default
+       div.container-fluid
+         div.navbar-header
+           a.navbar-brand(href="/memo") memo
+         div.collpase.navbar-collapse
+           ul.nav.navbar-nav
+           ul.nav.navbar-nav.navbar-right
+             li
+               button(type="button",class="btn btn-primary btn-lg",data-toggle="modal",data-target="#new_memo") + 새 메모
+      each memo in memos
+       div.col-sm-3
+        div.panel.panel-info
+          div.panel-heading
+            h6.panel-title(style="word-wrap:break-word;") Written by <strong id="#{memo._id}author">#{memo.author}</strong>
+          div.panel-body(id="#{memo._id}memo",style="word-wrap:break-word;") #{memo.memo}
+           each img in memo.photo
+            img(src="#{img}",class="img-responsive")
+          div.panel-footer
+            div.row
+              div.pull-right(style="margin-right:1em;")
+                button(type="submit",id="#{memo._id}delete",class="btn btn-danger btn-xs",style="margin-right:0.5em;") Delete
+                |<script>
+                |$(document).on('click','##{memo._id}delete', function (e) {
+                |    $.ajax({
+                |        url: '/memo/#{memo._id}',
+                |        type: 'DELETE',
+                |        statusCode : { 200 : function(result) {
+                |            window.location.replace("/memo");
+                |                }}
+                |        });    
+                |})
+                |</script>
+                button(type="button",id="#{memo._id}",class="btn btn-info btn-xs",data-toggle="modal",data-target="#edit_memo") Edit
+                |<script>
+                |$(document).on('click','##{memo._id}', function (e) {
+                |$('#edit_author_input').attr("value",$('##{memo._id}author').text())
+                |$('#edit_memo_input').text($('##{memo._id}memo').text())
+                |$('#edit_form').attr("action","/memo/#{memo._id}")
+                |})
+                |</script>
+            
+script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+
+
+    
+    
